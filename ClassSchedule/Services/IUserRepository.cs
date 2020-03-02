@@ -11,10 +11,12 @@ namespace ClassSchedule.Services
     public interface IUserRepository
     {
         Task<IEnumerable<User>> GetUsersAsync(UserDtoParameters parameters);
-        Task<User> GetUserAsync(string username, string password);
+        Task<User> GetUserAsync(string username);
         void AddUser(User user);
         void UpdateUser(User user);
         void DeleteUser(User user);
+
+        Task<bool> UserExistsAsync(string username, string password);
 
         Task<bool> SaveAsync();
     }
