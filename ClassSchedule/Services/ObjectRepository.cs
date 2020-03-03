@@ -2,12 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ClassSchedule.Data;
 using ClassSchedule.Entities;
 
 namespace ClassSchedule.Services
 {
     public class ObjectRepository: IObjectRepository<User>
     {
+        private readonly ClassScheduleDbContext _context;
+
+        public ObjectRepository(ClassScheduleDbContext context)
+        {
+            _context = context;
+        }
+
         public async Task<IEnumerable<User>> GetAllAsync(object parameters)
         {
             throw new NotImplementedException();
