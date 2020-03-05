@@ -10,11 +10,14 @@ using ClassSchedule.Models;
 using ClassSchedule.Services;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 
 namespace ClassSchedule.Controllers
 {
     [ApiController]
-    [Route("api/user")]
+    [Route("api/users")]
     public class UserController: ControllerBase
     {
         private readonly IUserRepository _userRepository;
@@ -67,8 +70,8 @@ namespace ClassSchedule.Controllers
                 }, returnDot);
         }
 
-        [HttpPut]
-        public async Task<ActionResult<UserDto>> UpdateUser(UserUpdateDto user)
+        [HttpPut("{username}")]
+        public async Task<ActionResult<UserDto>> UpdateUser(string username, UserUpdateDto user)
         {
             if (!await _userRepository.UserExistsAsync(user.UserName, user.OldPassword))
             {
@@ -79,16 +82,89 @@ namespace ClassSchedule.Controllers
 
             if (userEntity == null)
             {
-                return NotFound();
+                var userToAddEntity = _mapper.Map<User>(user);
+                userToAddEntity.UserName = user.UserName;
+
+                _userRepository.AddUser(userToAddEntity);
+                await _userRepository.SaveAsync();
+
+                var dtpToReturn = _mapper.Map<UserDto>(userToAddEntity);
+
+                return CreatedAtRoute(nameof(GetUser),
+                    new
+                    {
+                        username = dtpToReturn.UserName
+                    }, dtpToReturn);
             }
+
+            _mapper.Map(user, userEntity);
+
+            _userRepository.UpdateUser(userEntity);
+
+            await _userRepository.SaveAsync();
+
+            return NoContent();
+
             throw new Exception();
         }
 
-        [HttpPatch]
+        // 暂时有问题
+        // content-type: patch-json+json
+        [HttpPatch("{username}/{password}")]
         public async Task<IActionResult> RartiallyUpdateUser(
             string username,
+            string password,
             JsonPatchDocument<UserUpdateDto> patchDocument)
         {
+            if (!await _userRepository.UserExistsAsync(username, password))
+            {
+                return NotFound();
+            }
+
+            var userEntity = await _userRepository.GetUserAsync(username);
+
+            if (userEntity == null)
+            {
+                var userDto = new UserUpdateDto();
+                patchDocument.ApplyTo(userDto, ModelState);
+
+                if (!TryValidateModel(userDto))
+                {
+                    return ValidationProblem(ModelState);
+                }
+
+                var userToAdd = _mapper.Map<User>(userDto);
+                userToAdd.UserName = username;
+
+                _userRepository.AddUser(userToAdd);
+                await _userRepository.SaveAsync();
+
+                var dtpToReturn = _mapper.Map<UserDto>(userToAdd);
+
+                return CreatedAtRoute(nameof(GetUser),
+                    new
+                    {
+                        username = dtpToReturn.UserName
+                    }, dtpToReturn);
+            }
+
+            var dtoToPatch = _mapper.Map<UserUpdateDto>(userEntity);
+
+            patchDocument.ApplyTo(dtoToPatch, ModelState);
+
+            if (!TryValidateModel(dtoToPatch))
+            {
+                return ValidationProblem(ModelState);
+            }
+
+            _mapper.Map(dtoToPatch, userEntity);
+
+            _userRepository.UpdateUser(userEntity);
+
+            await _userRepository.SaveAsync();
+
+            return NoContent();
+
             throw new Exception();
         }
 
@@ -113,8 +189,17 @@ namespace ClassSchedule.Controllers
         [HttpOptions]
         public IActionResult GetUsersOptions()
         {
-            Response.Headers.Add("Allow", "GET,POST,DELETE,OPTIONS");
+            Response.Headers.Add("Allow", "GET,POST,DELETE,PUT,PATCH,OPTIONS");
             return Ok();
+        }
+
+        public override ActionResult ValidationProblem(
+            ModelStateDictionary modelStateDictionary)
+        {
+            var options = HttpContext.RequestServices
+                .GetRequiredService<IOptions<ApiBehaviorOptions>>();
+
+            return (ActionResult) options.Value.InvalidModelStateResponseFactory(ControllerContext);
         }
     }
 }

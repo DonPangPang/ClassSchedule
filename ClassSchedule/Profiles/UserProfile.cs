@@ -16,6 +16,14 @@ namespace ClassSchedule.Profiles
             CreateMap<User, UserDto>();
 
             CreateMap<UserAddDto, User>();
+
+            CreateMap<UserUpdateDto, User>()
+                .ForMember(dest => dest.Password,
+                    opt => opt.MapFrom(src => src.NewPassword));
+
+            CreateMap<User, UserUpdateDto>()
+                .ForMember(dest => dest.OldPassword,
+                    opt => opt.MapFrom(src => src.Password));
         }
     }
 }

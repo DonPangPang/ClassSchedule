@@ -51,3 +51,13 @@ F:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\bin\Debug\netcor
 F:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\e_sqlite3.dll
 F:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
 F:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+F:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\bin\Debug\netcoreapp3.1\ClassSchedule.deps.json
+F:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\bin\Debug\netcoreapp3.1\ClassSchedule.runtimeconfig.json
+F:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\bin\Debug\netcoreapp3.1\ClassSchedule.runtimeconfig.dev.json
+F:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\bin\Debug\netcoreapp3.1\ClassSchedule.dll
+F:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\bin\Debug\netcoreapp3.1\ClassSchedule.pdb
+F:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\bin\Debug\netcoreapp3.1\AutoMapper.dll
+F:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+F:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\obj\Debug\netcoreapp3.1\ClassSchedule.MvcApplicationPartsAssemblyInfo.cache
+F:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\obj\Debug\netcoreapp3.1\ClassSchedule.dll
+F:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\obj\Debug\netcoreapp3.1\ClassSchedule.pdb

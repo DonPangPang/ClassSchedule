@@ -23,6 +23,8 @@ namespace ClassSchedule.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>()
+                .HasKey(key => key.UserName);
+            modelBuilder.Entity<User>()
                 .Property(x => x.UserName).IsRequired().HasMaxLength(200);
             modelBuilder.Entity<User>()
                 .Property(x => x.Password).HasMaxLength(50);
@@ -51,6 +53,28 @@ namespace ClassSchedule.Data
                 .WithMany(x => x.Courses)
                 .HasForeignKey(x => x.StudentId)
                 .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<User>()
+                .HasData(
+                    new User
+                    {
+                        UserName = "admin",
+                        Password = "123456",
+                        StudentId = Guid.NewGuid()
+                    },
+                    new User
+                    {
+                        UserName = "test1",
+                        Password = "test1",
+                        StudentId = Guid.NewGuid()
+                    },
+                    new User
+                    {
+                        UserName = "test2",
+                        Password = "test2",
+                        StudentId = Guid.NewGuid()
+                    });
+            // Add-Migration InitialMigration
         }
     }
 }

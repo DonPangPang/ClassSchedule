@@ -1,0 +1,47 @@
+@hostname = http://localhost
+@port = 5000
+@host = {{hostname}}:{{port}}
+@contentType = application/json
+
+###
+OPTIONS {{host}}/api/users HTTP/1.1
+
+###
+GET {{host}}/api/users HTTP/1.1
+
+###
+GET {{host}}/api/users/admin HTTP/1.1
+
+###
+POST {{host}}/api/users HTTP/1.1
+Content-Type: {{contentType}}
+
+{
+    "userName": "test3",
+    "password": "test3"
+}
+
+###
+PUT {{host}}/api/users/test2 HTTP/1.1
+Content-Type: {{contentType}}
+
+{
+    "userName": "test2",
+    "oldPassword": "test2",
+    "newPassword": "test3"
+}
+
+### 暂时有问题
+PATCH {{host}}/users/test1 HTTP/1.1
+Content-Type: application/patch-json+json
+
+[
+    {
+        "op": "replace",
+        "path": "/password",
+        "value": "test11"
+    }
+]
+
+###
+DELETE {{host}}/api/users/test3 HTTP/1.1
