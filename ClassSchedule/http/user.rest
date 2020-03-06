@@ -31,15 +31,15 @@ Content-Type: {{contentType}}
     "newPassword": "test3"
 }
 
-### 暂时有问题
-PATCH {{host}}/users/test1 HTTP/1.1
-Content-Type: application/patch-json+json
+###
+PATCH {{host}}/api/users/test1/test11 HTTP/1.1
+Content-Type: {{contentType}}
 
 [
     {
         "op": "replace",
-        "path": "/password",
-        "value": "test11"
+        "path": "/newPassword",
+        "value": "test1"
     }
 ]
 

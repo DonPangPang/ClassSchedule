@@ -108,7 +108,6 @@ namespace ClassSchedule.Controllers
             throw new Exception();
         }
 
-        // 暂时有问题
         // content-type: patch-json+json
         [HttpPatch("{username}/{password}")]
         public async Task<IActionResult> RartiallyUpdateUser(
@@ -164,8 +163,6 @@ namespace ClassSchedule.Controllers
             await _userRepository.SaveAsync();
 
             return NoContent();
-
-            throw new Exception();
         }
 
         [HttpDelete("{username}")]
