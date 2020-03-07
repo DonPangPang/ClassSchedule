@@ -9,6 +9,7 @@ using ClassSchedule.Models;
 using ClassSchedule.DtoParameters;
 using ClassSchedule.Services;
 using ClassSchedule.Entities;
+using Microsoft.AspNetCore.JsonPatch;
 
 namespace ClassSchedule.Controllers
 {
@@ -99,6 +100,64 @@ namespace ClassSchedule.Controllers
             }
 
             _mapper.Map(_class, classEntity);
+
+            _classRepository.UpdateClass(classEntity);
+
+            await _classRepository.SaveAsync();
+
+            return NoContent();
+        }
+
+        [HttpPatch]
+        public async Task<IActionResult> RartiallyUpdateClass(
+            Guid classId,
+            JsonPatchDocument<ClassUpdateDto> patchDocument
+        )
+        {
+            if(!await _classRepository.ClassExitAsync(classId))
+            {
+                return NotFound();
+            }
+
+            var classEntity = await _classRepository.GetClassAsync(classId);
+
+            if(classEntity == null)
+            {
+                var classDto = new ClassUpdateDto();
+                patchDocument.ApplyTo(classDto, ModelState);
+
+                if(!TryValidateModel(classDto))
+                {
+                    return ValidationProblem(ModelState);
+                }
+
+                var classToAdd = _mapper.Map<Class>(classDto);
+                classToAdd.ClassId = classId;
+
+                _classRepository.AddCLass(classToAdd);
+                await _classRepository.SaveAsync();
+
+                var dtoToReturn = _mapper.Map<ClassDto>(classToAdd);
+
+                return CreatedAtRoute(
+                    nameof(GetClass),
+                    new{
+                        classId = dtoToReturn.CLassId,
+                        className = dtoToReturn.ClassName
+                    }, dtoToReturn
+                );
+            }
+
+            var dtoToPatch = _mapper.Map<ClassUpdateDto>(classEntity);
+
+            patchDocument.ApplyTo(dtoToPatch, ModelState);
+
+            if(!TryValidateModel(dtoToPatch))
+            {
+                return ValidationProblem(ModelState);
+            }
+
+            _mapper.Map(dtoToPatch, classEntity);
 
             _classRepository.UpdateClass(classEntity);
 
