@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -6,13 +6,13 @@ using AutoMapper;
 using ClassSchedule.Entities;
 using ClassSchedule.Models;
 
-namespace ClassSchedule.Profiles
+namespace ClassSchedule.Profiles 
 {
-    public class StudentProfile: Profile
+    public class StudentProfile : Profile 
     {
-        public StudentProfile()
+        public StudentProfile () 
         {
-            CreateMap<Student, StudentDto>();
+            CreateMap<Student, StudentDto> ();
         }
     }
 }

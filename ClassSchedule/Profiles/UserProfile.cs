@@ -7,23 +7,23 @@ using ClassSchedule.DtoParameters;
 using ClassSchedule.Entities;
 using ClassSchedule.Models;
 
-namespace ClassSchedule.Profiles
+namespace ClassSchedule.Profiles 
 {
-    public class UserProfile: Profile
+    public class UserProfile : Profile 
     {
-        public UserProfile()
+        public UserProfile () 
         {
-            CreateMap<User, UserDto>();
+            CreateMap<User, UserDto> ();
 
-            CreateMap<UserAddDto, User>();
+            CreateMap<UserAddDto, User> ();
 
-            CreateMap<UserUpdateDto, User>()
-                .ForMember(dest => dest.Password,
-                    opt => opt.MapFrom(src => src.NewPassword));
+            CreateMap<UserUpdateDto, User> ()
+                .ForMember (dest => dest.Password,
+                    opt => opt.MapFrom (src => src.NewPassword));
 
-            CreateMap<User, UserUpdateDto>()
-                .ForMember(dest => dest.OldPassword,
-                    opt => opt.MapFrom(src => src.Password));
+            CreateMap<User, UserUpdateDto> ()
+                .ForMember (dest => dest.OldPassword,
+                    opt => opt.MapFrom (src => src.Password));
         }
     }
 }

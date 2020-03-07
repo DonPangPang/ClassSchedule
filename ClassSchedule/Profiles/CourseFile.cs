@@ -1,12 +1,13 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 
-namespace ClassSchedule.Profiles
+namespace ClassSchedule.Profiles 
 {
-    public class CourseFile: Profile
+    public class CourseFile : Profile 
     {
+
     }
 }
