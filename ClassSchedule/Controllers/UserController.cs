@@ -67,7 +67,9 @@ namespace ClassSchedule.Controllers
                 new
                 {
                     username = returnDot.UserName
-                }, returnDot);
+                },
+                returnDot
+            );
         }
 
         [HttpPut("{username}")]
@@ -88,13 +90,13 @@ namespace ClassSchedule.Controllers
                 _userRepository.AddUser(userToAddEntity);
                 await _userRepository.SaveAsync();
 
-                var dtpToReturn = _mapper.Map<UserDto>(userToAddEntity);
+                var dtoToReturn = _mapper.Map<UserDto>(userToAddEntity);
 
                 return CreatedAtRoute(nameof(GetUser),
                     new
                     {
-                        username = dtpToReturn.UserName
-                    }, dtpToReturn);
+                        username = dtoToReturn.UserName
+                    }, dtoToReturn);
             }
 
             _mapper.Map(user, userEntity);
@@ -104,8 +106,6 @@ namespace ClassSchedule.Controllers
             await _userRepository.SaveAsync();
 
             return NoContent();
-
-            throw new Exception();
         }
 
         // content-type: patch-json+json
@@ -138,13 +138,14 @@ namespace ClassSchedule.Controllers
                 _userRepository.AddUser(userToAdd);
                 await _userRepository.SaveAsync();
 
-                var dtpToReturn = _mapper.Map<UserDto>(userToAdd);
+                var dtoToReturn = _mapper.Map<UserDto>(userToAdd);
 
                 return CreatedAtRoute(nameof(GetUser),
                     new
                     {
-                        username = dtpToReturn.UserName
-                    }, dtpToReturn);
+                        username = dtoToReturn.UserName
+                    }, dtoToReturn
+                );
             }
 
             var dtoToPatch = _mapper.Map<UserUpdateDto>(userEntity);
