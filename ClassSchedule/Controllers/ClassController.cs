@@ -65,7 +65,7 @@ namespace ClassSchedule.Controllers
                     className = returnDto.ClassName
                 },
                 returnDto
-            )
+            );
         }
 
         [HttpPut("{classId}")]
@@ -95,7 +95,7 @@ namespace ClassSchedule.Controllers
                         className = dtoToReturn.ClassName
                     },
                     dtoToReturn
-                )
+                );
             }
 
             _mapper.Map(_class, classEntity);
