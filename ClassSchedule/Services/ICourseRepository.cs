@@ -14,6 +14,7 @@ namespace ClassSchedule.Services
         void AddCourse(Guid studentId, Course course);
         void UpdateCourse(Course course);
         void DeleteCourse(Course course);
+        Task<bool> CourseExitAsync(Guid courseId);
 
         Task<bool> SaveAsync();
     }

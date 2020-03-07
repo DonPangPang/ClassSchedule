@@ -14,6 +14,7 @@ namespace ClassSchedule.Services
         void AddStudent(Guid classId, Student student);
         void UpdateStudent(Student student);
         void DeleteStudent(Student student);
+        Task<bool> StudentExitAsync(Guid studentId);
 
         Task<bool> SaveAsync();
     }

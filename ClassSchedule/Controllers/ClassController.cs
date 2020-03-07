@@ -10,6 +10,9 @@ using ClassSchedule.DtoParameters;
 using ClassSchedule.Services;
 using ClassSchedule.Entities;
 using Microsoft.AspNetCore.JsonPatch;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 
 namespace ClassSchedule.Controllers
 {
@@ -164,6 +167,38 @@ namespace ClassSchedule.Controllers
             await _classRepository.SaveAsync();
 
             return NoContent();
+        }
+
+        [HttpDelete("{classId}")]
+        public async Task<IActionResult> DeleteClass(Guid classId)
+        {
+            var classEntity = await _classRepository.GetClassAsync(classId);
+
+            if(classEntity == null)
+            {
+                return NotFound();
+            }
+
+            _classRepository.DeleteClass(classEntity);
+            await _classRepository.SaveAsync();
+
+            return NoContent();
+        }
+
+        [HttpOptions]
+        public IActionResult GetClassOptions()
+        {
+            Response.Headers.Add("Allow", "GET, POST, DELETE, PUT, PATCH, OPTIONS");
+            return Ok();
+        }
+
+        public override ActionResult ValidationProblem(
+            ModelStateDictionary modelStateDictionary)
+        {
+            var options = HttpContext.RequestServices
+                .GetRequiredService<IOptions<ApiBehaviorOptions>>();
+
+            return (ActionResult) options.Value.InvalidModelStateResponseFactory(ControllerContext);
         }
     }
 }

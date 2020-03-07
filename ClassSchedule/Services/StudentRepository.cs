@@ -88,6 +88,16 @@ namespace ClassSchedule.Services
             _context.Students.Remove(student);
         }
 
+        public async Task<bool> StudentExitAsync(Guid studentId)
+        {
+            if(studentId == Guid.Empty)
+            {
+                throw new ArgumentNullException(nameof(studentId));
+            }
+
+            return await _context.Students.AnyAsync(x => x.StudentId == studentId);
+        }
+
         public async Task<bool> SaveAsync()
         {
             return await _context.SaveChangesAsync() >= 0;
