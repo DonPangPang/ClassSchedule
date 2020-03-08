@@ -1,14 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Security.Cryptography;
 using AutoMapper;
-using ClassSchedule.Data;
 using ClassSchedule.DtoParameters;
 using ClassSchedule.Entities;
 using ClassSchedule.Models;
 using ClassSchedule.Services;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 
 namespace ClassSchedule.Controllers
 {
@@ -87,6 +90,142 @@ namespace ClassSchedule.Controllers
                     studentId = dtoToReturn.StudentId
                 }, dtoToReturn
             );
+        }
+
+        [HttpPut("studentId")]
+        public async Task<ActionResult<StudentDto>> UpdateStudent(
+            Guid classId,
+            Guid studentId,
+            StudentUpdateDto student
+        )
+        {
+            if(!await _classRepository.ClassExitAsync(classId))
+            {
+                return NotFound();
+            }
+
+            var studentEntity = await _studentRepository.GetStudentAsync(classId, studentId);
+
+            if(studentEntity == null)
+            {
+                var studentToAddEntity = _mapper.Map<Student>(student);
+                studentToAddEntity.StudentId = studentId;
+
+                _studentRepository.AddStudent(classId, studentToAddEntity);
+
+                await _studentRepository.SaveAsync();
+
+                var dtoToReturn = _mapper.Map<StudentDto>(studentToAddEntity);
+
+                return CreatedAtRoute(
+                    nameof(GetStudent),
+                    new{
+                        classId = classId,
+                        studentId = dtoToReturn.StudentId
+                    }, dtoToReturn
+                );
+            }
+
+            _mapper.Map(student, studentEntity);
+
+            _studentRepository.UpdateStudent(studentEntity);
+
+            await _studentRepository.SaveAsync();
+
+            return NoContent();
+        }
+
+        [HttpPatch("studentId")]
+        public async Task<IActionResult> PartiallyUpdateStudent(
+            Guid classId, 
+            Guid studentId,
+            JsonPatchDocument<StudentUpdateDto> patchDocument
+        )
+        {
+            if(!await _classRepository.ClassExitAsync(classId))
+            {
+                return NotFound();
+            }
+
+            var studentEntity = await _studentRepository.GetStudentAsync(classId, studentId);
+
+            if(studentEntity == null)
+            {
+                var studentDto = new StudentUpdateDto();
+                patchDocument.ApplyTo(studentDto, ModelState);
+
+                if(!TryValidateModel(studentDto))
+                {
+                    return ValidationProblem(ModelState);
+                }
+
+                var studentToAdd = _mapper.Map<Student>(studentDto);
+                studentToAdd.StudentId = studentId;
+
+                _studentRepository.AddStudent(classId, studentToAdd);
+                await _studentRepository.SaveAsync();
+
+                var dtoToReturn = _mapper.Map<StudentDto>(studentEntity);
+
+                return CreatedAtRoute(
+                    nameof(GetStudent),
+                    new{
+                        classId = classId,
+                        studentId = dtoToReturn.StudentId
+                    }, dtoToReturn
+                );
+            }
+
+            var dtoToPatch = _mapper.Map<StudentUpdateDto>(studentEntity);
+
+            patchDocument.ApplyTo(dtoToPatch, ModelState);
+
+            if(!TryValidateModel(dtoToPatch))
+            {
+                return ValidationProblem(ModelState);
+            }
+
+            _mapper.Map(dtoToPatch, studentEntity);
+
+            _studentRepository.UpdateStudent(studentEntity);
+
+            await _studentRepository.SaveAsync();
+
+            return NoContent();
+        }
+
+        [HttpDelete("{studentId}")]
+        public async Task<IActionResult> DeleteStudent(
+            Guid classId, 
+            Guid studentId
+        )
+        {
+            if(!await _classRepository.ClassExitAsync(classId))
+            {
+                return NotFound();
+            }
+
+            var studentEntity = await _studentRepository.GetStudentAsync(classId, studentId);
+
+            if(studentEntity == null)
+            {
+                return NotFound();
+            }
+
+            _studentRepository.DeleteStudent(studentEntity);
+
+            await _studentRepository.SaveAsync();
+
+            return NoContent();
+        }
+
+        public override ActionResult ValidationProblem(
+            ModelStateDictionary modelStateDictionary)
+        {
+            var options = HttpContext.RequestServices
+                .GetRequiredService<IOptions<ApiBehaviorOptions>>();
+
+            return (ActionResult) options.Value.InvalidModelStateResponseFactory(ControllerContext);
         }
     }
 }
