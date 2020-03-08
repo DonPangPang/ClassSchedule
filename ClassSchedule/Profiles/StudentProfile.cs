@@ -13,6 +13,12 @@ namespace ClassSchedule.Profiles
         public StudentProfile () 
         {
             CreateMap<Student, StudentDto> ();
+
+            CreateMap<StudentAddDto, Student>();
+
+            CreateMap<StudentUpdateDto, Student>();
+
+            CreateMap<Student, StudentUpdateDto>();
         }
     }
 }

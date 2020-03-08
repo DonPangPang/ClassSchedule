@@ -1,0 +1,10 @@
+@hostname = http://localhost
+@port = 5000
+@contentType = application/json
+# (Guid) classId
+@classId = 0000-0000-0000-0000
+@route = api/classes/{classId}
+@host = {{hostname}}:{{port}}/{{route}}
+
+###
+OPTIONS {{host}}/students

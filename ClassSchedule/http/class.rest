@@ -1,0 +1,50 @@
+@hostname = http://localhost
+@port = 5000
+@host = {{hostname}}:{{port}}
+@contentType = application/json
+
+###
+OPTIONS {{host}}/api/classes HTTP/1.1
+
+###
+GET {{host}}/api/classes HTTP/1.1
+
+###
+@classId_GET = 0000-0000-0000-0000
+GET {{host}}/api/classes/{{classId_GET}} HTTP/1.1
+
+###
+POST {{host}}/api/classes HTTP/1.1
+Content-Type: {{contentType}}
+
+{
+    "className": "Test Class",
+    "introduction": "A Simple Class"
+}
+
+###
+@classId_PUT = 0000-0000-0000-0000
+PUT {{host}}/api/classes/{{classId_PUT}}
+Content-Type: {{contentType}}
+
+{
+    "className": "Test Class",
+    "introduction": "A Simple Class"
+}
+
+###
+@classId_PATCH = 0000-0000-0000-0000
+PATCH {{host}}/api/classes/{{classId_PATCH}}
+Content-Type: {{contentType}}
+
+[
+    {
+        "op": "replace",
+        "path": "/className",
+        "value": "Test Replace Class"
+    }
+]
+
+###
+@classId_DELETE = 0000-0000-0000-0000
+DELETE {{host}}/api/classes/{{classId_DELETE}}
