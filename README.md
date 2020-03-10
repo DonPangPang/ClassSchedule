@@ -2,8 +2,11 @@
 
 ## Update Description
 
+### 2020-03-10
+* Fix some questions (Course)
+
 ### 2020-03-09
-* Fix some question (User)
+* Fix some questions (User)
 * Add Course files
 
 ### 2020-03-08

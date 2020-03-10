@@ -45,20 +45,20 @@ namespace ClassSchedule.Services
             return await queryExpression.ToListAsync();
         }
 
-        public async Task<Course> GetCourseAsync(Guid courseId, Guid studentId)
+        public async Task<Course> GetCourseAsync(Guid studentId, Guid courseId)
         {
-            if (courseId == Guid.Empty)
-            {
-                throw new ArgumentNullException(nameof(courseId));
-            }
-
             if (studentId == Guid.Empty)
             {
                 throw new ArgumentNullException(nameof(studentId));
             }
 
+            if (courseId == Guid.Empty)
+            {
+                throw new ArgumentNullException(nameof(courseId));
+            }
+
             return await _context.Courses
-                .Where(x => x.CourseId == courseId && x.StudentId == studentId)
+                .Where(x => x.StudentId == studentId && x.CourseId == courseId)
                 .FirstOrDefaultAsync();
         }
 

@@ -56,5 +56,29 @@ namespace ClassSchedule.Controllers
 
             return Ok(courseDtos);
         }
+
+        [HttpGet("courseId", Name = nameof(GetCourse))]
+        public async Task<ActionResult<CourseDto>> GetCourse(
+            Guid studentId,
+            Guid courseId
+        )
+        {
+
+            if(! await _studentRepository.StudentExitAsync(studentId))
+            {
+                return NotFound();
+            }
+
+            if(! await _courseRepository.CourseExitAsync(courseId))
+            {
+                return NotFound();
+            }
+
+            var course = await _courseRepository.GetCourseAsync(studentId, courseId);
+
+            var courseDtos = _mapper.Map<IEnumerable<CourseDto>>(course);
+
+            return Ok(course);
+        }
     }
 }
