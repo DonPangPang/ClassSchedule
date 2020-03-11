@@ -60,20 +60,56 @@ namespace ClassSchedule.Data
                     {
                         UserName = "admin",
                         Password = "123456",
-                        StudentId = Guid.NewGuid()
+                        StudentId = Guid.NewGuid(),
+                        ClassId = Guid.NewGuid()
                     },
                     new User
                     {
                         UserName = "test1",
                         Password = "test1",
-                        StudentId = Guid.NewGuid()
+                        StudentId = Guid.NewGuid(),
+                        ClassId = Guid.NewGuid()
                     },
                     new User
                     {
                         UserName = "test2",
                         Password = "test2",
-                        StudentId = Guid.NewGuid()
+                        StudentId = Guid.NewGuid(),
+                        ClassId = Guid.NewGuid()
                     });
+            modelBuilder.Entity<Class>()
+                .HasData(
+                    new Class
+                    {
+                        ClassId = Guid.NewGuid(),
+                        Name = "Class1",
+                        Introduction = "This is Class 1."
+                    },
+                    new Class
+                    {
+                        ClassId = Guid.NewGuid(),
+                        Name = "Class1",
+                        Introduction = "This is Class 1."
+                    },
+                    new Class
+                    {
+                        ClassId = Guid.NewGuid(),
+                        Name = "Class1",
+                        Introduction = "This is Class 1."
+                    },
+                    new Class
+                    {
+                        ClassId = Guid.NewGuid(),
+                        Name = "Class1",
+                        Introduction = "This is Class 1."
+                    },
+                    new Class
+                    {
+                        ClassId = Guid.NewGuid(),
+                        Name = "Class1",
+                        Introduction = "This is Class 1."
+                    }
+                );
             // Add-Migration InitialMigration
         }
     }

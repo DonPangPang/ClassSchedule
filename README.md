@@ -2,6 +2,15 @@
 
 ## Update Description
 
+### 2020-03-11
+* Fix some questions
+* Waiting to be solved
+  * StudentController
+    * GET, POST, PUT, PATCH
+  * ClassController
+    * Name -> ClassName (Auto Mapper)
+  * Test CourseController
+
 ### 2020-03-10
 * Fix some questions (Course)
 

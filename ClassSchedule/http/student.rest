@@ -2,9 +2,12 @@
 @port = 5000
 @contentType = application/json
 # (Guid) classId
-@classId = 0000-0000-0000-0000
+@classId = 8dec0933-6842-497b-a04e-c20ea7a86707
 @route = api/classes/{classId}
 @host = {{hostname}}:{{port}}/{{route}}
 
 ###
 OPTIONS {{host}}/students
+
+###
+GET {{host}}/students HTTP/1.1

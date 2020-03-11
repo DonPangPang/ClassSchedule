@@ -10,7 +10,7 @@ OPTIONS {{host}}/api/classes HTTP/1.1
 GET {{host}}/api/classes HTTP/1.1
 
 ###
-@classId_GET = 0000-0000-0000-0000
+@classId_GET = 8dec0933-6842-497b-a04e-c20ea7a86707
 GET {{host}}/api/classes/{{classId_GET}} HTTP/1.1
 
 ###
