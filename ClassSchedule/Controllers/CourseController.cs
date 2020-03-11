@@ -9,6 +9,7 @@ using ClassSchedule.Services;
 using Microsoft.AspNetCore.Mvc;
 using ClassSchedule.Models;
 using ClassSchedule.DtoParameters;
+using ClassSchedule.Entities;
 
 namespace ClassSchedule.Controllers
 {
@@ -79,6 +80,40 @@ namespace ClassSchedule.Controllers
             var courseDtos = _mapper.Map<IEnumerable<CourseDto>>(course);
 
             return Ok(course);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<CourseDto>> CreateCourse(
+            Guid classId,
+            Guid studentId,
+            [FromBody]CourseAddDto course
+        )
+        {
+            if(!await _classRepository.ClassExitAsync(classId))
+            {
+                return NotFound();
+            }
+
+            if(!await _studentRepository.StudentExitAsync(studentId))
+            {
+                return NotFound();
+            }
+
+            var entity = _mapper.Map<Course>(course);
+
+            _courseRepository.AddCourse(studentId, entity);
+            await _courseRepository.SaveAsync();
+
+            var dtoToReturn = _mapper.Map<CourseDto>(entity);
+
+            return CreatedAtRoute(
+                nameof(GetCourse),
+                new{
+                    classId = classId,
+                    studentId = studentId,
+                    courseId = dtoToReturn.CourseId
+                }, dtoToReturn
+            );
         }
     }
 }
