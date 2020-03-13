@@ -1,0 +1,11 @@
+F:\LE-ZZGS\202002\workspace\project\ClassSchedule\GuidCreater\obj\Debug\netcoreapp3.1\GuidCreater.csprojAssemblyReference.cache
+F:\LE-ZZGS\202002\workspace\project\ClassSchedule\GuidCreater\obj\Debug\netcoreapp3.1\GuidCreater.AssemblyInfoInputs.cache
+F:\LE-ZZGS\202002\workspace\project\ClassSchedule\GuidCreater\obj\Debug\netcoreapp3.1\GuidCreater.AssemblyInfo.cs
+F:\LE-ZZGS\202002\workspace\project\ClassSchedule\GuidCreater\bin\Debug\netcoreapp3.1\GuidCreater.exe
+F:\LE-ZZGS\202002\workspace\project\ClassSchedule\GuidCreater\bin\Debug\netcoreapp3.1\GuidCreater.deps.json
+F:\LE-ZZGS\202002\workspace\project\ClassSchedule\GuidCreater\bin\Debug\netcoreapp3.1\GuidCreater.runtimeconfig.json
+F:\LE-ZZGS\202002\workspace\project\ClassSchedule\GuidCreater\bin\Debug\netcoreapp3.1\GuidCreater.runtimeconfig.dev.json
+F:\LE-ZZGS\202002\workspace\project\ClassSchedule\GuidCreater\bin\Debug\netcoreapp3.1\GuidCreater.dll
+F:\LE-ZZGS\202002\workspace\project\ClassSchedule\GuidCreater\bin\Debug\netcoreapp3.1\GuidCreater.pdb
+F:\LE-ZZGS\202002\workspace\project\ClassSchedule\GuidCreater\obj\Debug\netcoreapp3.1\GuidCreater.dll
+F:\LE-ZZGS\202002\workspace\project\ClassSchedule\GuidCreater\obj\Debug\netcoreapp3.1\GuidCreater.pdb

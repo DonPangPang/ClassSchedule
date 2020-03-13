@@ -30,13 +30,13 @@ namespace ClassSchedule.Services
             if (!string.IsNullOrWhiteSpace(parameters.Name))
             {
                 parameters.Name = parameters.Name.Trim();
-                queryExpression = queryExpression.Where(x => x.Name == parameters.Name);
+                queryExpression = queryExpression.Where(x => x.ClassName == parameters.Name);
             }
 
             if (!string.IsNullOrWhiteSpace(parameters.SearchTerm))
             {
                 parameters.SearchTerm = parameters.SearchTerm.Trim();
-                queryExpression = queryExpression.Where(x => x.Name.Contains(parameters.SearchTerm));
+                queryExpression = queryExpression.Where(x => x.ClassName.Contains(parameters.SearchTerm));
             }
 
             queryExpression = queryExpression.Skip(parameters.PageSize * (parameters.PageNumber - 1))

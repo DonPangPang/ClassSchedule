@@ -3,14 +3,16 @@ using System;
 using ClassSchedule.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ClassSchedule.Migrations
 {
     [DbContext(typeof(ClassScheduleDbContext))]
-    partial class ClassScheduleDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200313003004_InitialMigration3")]
+    partial class InitialMigration3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -38,21 +40,33 @@ namespace ClassSchedule.Migrations
                     b.HasData(
                         new
                         {
-                            ClassId = new Guid("1b7b249e-658e-4ce5-a012-6277060e1a97"),
+                            ClassId = new Guid("9433d145-5f42-4e4a-9ba4-0748fff8e6e6"),
                             ClassName = "Class1",
                             Introduction = "This is Class 1."
                         },
                         new
                         {
-                            ClassId = new Guid("1bda4fd2-b11e-4934-8f40-3118a630b854"),
+                            ClassId = new Guid("4c4b5936-6842-4bc2-a050-f633510fa7de"),
                             ClassName = "Class2",
                             Introduction = "This is Class 2."
                         },
                         new
                         {
-                            ClassId = new Guid("83b6fc4b-c619-478c-928c-ca5a9c2f728c"),
+                            ClassId = new Guid("10ef6ade-875f-421f-a405-e40decd2651c"),
                             ClassName = "Class3",
                             Introduction = "This is Class 3."
+                        },
+                        new
+                        {
+                            ClassId = new Guid("25648edb-ef72-42d2-bb66-11b7a4e9a17b"),
+                            ClassName = "Class4",
+                            Introduction = "This is Class 4."
+                        },
+                        new
+                        {
+                            ClassId = new Guid("cb38a446-b030-4ff9-94b6-d4cc7803a84e"),
+                            ClassName = "Class5",
+                            Introduction = "This is Class 5."
                         });
                 });
 
@@ -142,23 +156,23 @@ namespace ClassSchedule.Migrations
                         new
                         {
                             UserName = "admin",
-                            ClassId = new Guid("1b7b249e-658e-4ce5-a012-6277060e1a97"),
+                            ClassId = new Guid("b8395db5-d633-4d0d-beb5-62e8446f1d8b"),
                             Password = "123456",
-                            StudentId = new Guid("b4aab9f4-c743-4fc5-a09e-aa172fc318be")
+                            StudentId = new Guid("fe4e3aeb-8772-42f3-acd7-81303a7522d5")
                         },
                         new
                         {
                             UserName = "test1",
-                            ClassId = new Guid("1bda4fd2-b11e-4934-8f40-3118a630b854"),
+                            ClassId = new Guid("a0994120-8d5e-4db5-befa-039793f2cd20"),
                             Password = "test1",
-                            StudentId = new Guid("57700e3b-ea69-48a4-90cf-6e5bfc9bec6a")
+                            StudentId = new Guid("7c52bd70-ab30-48f1-860d-6df711b71fb8")
                         },
                         new
                         {
                             UserName = "test2",
-                            ClassId = new Guid("83b6fc4b-c619-478c-928c-ca5a9c2f728c"),
+                            ClassId = new Guid("6fce4416-93ff-47ff-b274-8581f3823979"),
                             Password = "test2",
-                            StudentId = new Guid("79b8da71-e41d-4210-b78b-89e415a65b19")
+                            StudentId = new Guid("5ae0ff83-5b80-46f1-975a-f7256ead77dc")
                         });
                 });
 

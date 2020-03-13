@@ -32,7 +32,7 @@ namespace ClassSchedule.Data
             modelBuilder.Entity<Class>()
                 .Property(x => x.Introduction).HasMaxLength(200);
             modelBuilder.Entity<Class>()
-                .Property(x => x.Name).IsRequired().HasMaxLength(100);
+                .Property(x => x.ClassName).IsRequired().HasMaxLength(100);
 
             modelBuilder.Entity<Student>()
                 .Property(x => x.StudentName).IsRequired().HasMaxLength(20);
@@ -60,54 +60,42 @@ namespace ClassSchedule.Data
                     {
                         UserName = "admin",
                         Password = "123456",
-                        StudentId = Guid.NewGuid(),
-                        ClassId = Guid.NewGuid()
+                        StudentId = Guid.Parse("b4aab9f4-c743-4fc5-a09e-aa172fc318be"),
+                        ClassId = Guid.Parse("1b7b249e-658e-4ce5-a012-6277060e1a97")
                     },
                     new User
                     {
                         UserName = "test1",
                         Password = "test1",
-                        StudentId = Guid.NewGuid(),
-                        ClassId = Guid.NewGuid()
+                        StudentId = Guid.Parse("57700e3b-ea69-48a4-90cf-6e5bfc9bec6a"),
+                        ClassId = Guid.Parse("1bda4fd2-b11e-4934-8f40-3118a630b854")
                     },
                     new User
                     {
                         UserName = "test2",
                         Password = "test2",
-                        StudentId = Guid.NewGuid(),
-                        ClassId = Guid.NewGuid()
+                        StudentId = Guid.Parse("79b8da71-e41d-4210-b78b-89e415a65b19"),
+                        ClassId = Guid.Parse("83b6fc4b-c619-478c-928c-ca5a9c2f728c")
                     });
             modelBuilder.Entity<Class>()
                 .HasData(
                     new Class
                     {
-                        ClassId = Guid.NewGuid(),
-                        Name = "Class1",
+                        ClassId = Guid.Parse("1b7b249e-658e-4ce5-a012-6277060e1a97"),
+                        ClassName = "Class1",
                         Introduction = "This is Class 1."
                     },
                     new Class
                     {
-                        ClassId = Guid.NewGuid(),
-                        Name = "Class1",
-                        Introduction = "This is Class 1."
+                        ClassId = Guid.Parse("1bda4fd2-b11e-4934-8f40-3118a630b854"),
+                        ClassName = "Class2",
+                        Introduction = "This is Class 2."
                     },
                     new Class
                     {
-                        ClassId = Guid.NewGuid(),
-                        Name = "Class1",
-                        Introduction = "This is Class 1."
-                    },
-                    new Class
-                    {
-                        ClassId = Guid.NewGuid(),
-                        Name = "Class1",
-                        Introduction = "This is Class 1."
-                    },
-                    new Class
-                    {
-                        ClassId = Guid.NewGuid(),
-                        Name = "Class1",
-                        Introduction = "This is Class 1."
+                        ClassId = Guid.Parse("83b6fc4b-c619-478c-928c-ca5a9c2f728c"),
+                        ClassName = "Class3",
+                        Introduction = "This is Class 3."
                     }
                 );
             // Add-Migration InitialMigration
