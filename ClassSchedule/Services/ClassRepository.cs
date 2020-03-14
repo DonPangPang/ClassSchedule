@@ -58,7 +58,7 @@ namespace ClassSchedule.Services
 
         public void AddCLass(Class _class)
         {
-            if (_class != null)
+            if (_class == null)
             {
                 throw new ArgumentNullException(nameof(_class));
             }

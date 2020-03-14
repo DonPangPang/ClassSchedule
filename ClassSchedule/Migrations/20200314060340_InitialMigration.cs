@@ -12,7 +12,7 @@ namespace ClassSchedule.Migrations
                 columns: table => new
                 {
                     ClassId = table.Column<Guid>(nullable: false),
-                    Name = table.Column<string>(maxLength: 100, nullable: false),
+                    ClassName = table.Column<string>(maxLength: 100, nullable: false),
                     Introduction = table.Column<string>(maxLength: 200, nullable: true)
                 },
                 constraints: table =>
@@ -26,6 +26,7 @@ namespace ClassSchedule.Migrations
                 {
                     UserName = table.Column<string>(maxLength: 200, nullable: false),
                     Password = table.Column<string>(maxLength: 50, nullable: true),
+                    ClassId = table.Column<Guid>(nullable: false),
                     StudentId = table.Column<Guid>(nullable: false)
                 },
                 constraints: table =>
@@ -78,19 +79,34 @@ namespace ClassSchedule.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "Users",
-                columns: new[] { "UserName", "Password", "StudentId" },
-                values: new object[] { "admin", "123456", new Guid("1ba17635-9c60-49f8-9fb4-bd8a1ed940fa") });
+                table: "Classes",
+                columns: new[] { "ClassId", "ClassName", "Introduction" },
+                values: new object[] { new Guid("1b7b249e-658e-4ce5-a012-6277060e1a97"), "Class1", "This is Class 1." });
+
+            migrationBuilder.InsertData(
+                table: "Classes",
+                columns: new[] { "ClassId", "ClassName", "Introduction" },
+                values: new object[] { new Guid("1bda4fd2-b11e-4934-8f40-3118a630b854"), "Class2", "This is Class 2." });
+
+            migrationBuilder.InsertData(
+                table: "Classes",
+                columns: new[] { "ClassId", "ClassName", "Introduction" },
+                values: new object[] { new Guid("83b6fc4b-c619-478c-928c-ca5a9c2f728c"), "Class3", "This is Class 3." });
 
             migrationBuilder.InsertData(
                 table: "Users",
-                columns: new[] { "UserName", "Password", "StudentId" },
-                values: new object[] { "test1", "test1", new Guid("38dd6584-af99-43d4-8040-d7f8ce8d1f78") });
+                columns: new[] { "UserName", "ClassId", "Password", "StudentId" },
+                values: new object[] { "admin", new Guid("1b7b249e-658e-4ce5-a012-6277060e1a97"), "123456", new Guid("b4aab9f4-c743-4fc5-a09e-aa172fc318be") });
 
             migrationBuilder.InsertData(
                 table: "Users",
-                columns: new[] { "UserName", "Password", "StudentId" },
-                values: new object[] { "test2", "test2", new Guid("a7006c05-5b20-4801-8131-6734d6fff00b") });
+                columns: new[] { "UserName", "ClassId", "Password", "StudentId" },
+                values: new object[] { "test1", new Guid("1bda4fd2-b11e-4934-8f40-3118a630b854"), "test1", new Guid("57700e3b-ea69-48a4-90cf-6e5bfc9bec6a") });
+
+            migrationBuilder.InsertData(
+                table: "Users",
+                columns: new[] { "UserName", "ClassId", "Password", "StudentId" },
+                values: new object[] { "test2", new Guid("83b6fc4b-c619-478c-928c-ca5a9c2f728c"), "test2", new Guid("79b8da71-e41d-4210-b78b-89e415a65b19") });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Courses_StudentId",

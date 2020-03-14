@@ -2,6 +2,14 @@
 
 ## Update Description
 
+### 2020-03-14
+* Fix ClassController
+  * Name -> ClassName(Not is Auto Mapper)
+    * Error: SqlLite Not Support Change col_Names
+* ClassApi Support Test Success
+* Update DbFile
+* nice day :)
+
 ### 2020-03-13
 * Fix some questions & find more and more new questions :)
 

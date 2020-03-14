@@ -2,7 +2,6 @@ F:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\bin\Debug\netcor
 F:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\bin\Debug\netcoreapp3.1\appsettings.json
 F:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 F:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\bin\Debug\netcoreapp3.1\ClassSchedule.exe
-F:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\obj\Debug\netcoreapp3.1\ClassSchedule.csprojAssemblyReference.cache
 F:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\obj\Debug\netcoreapp3.1\staticwebassets\ClassSchedule.StaticWebAssets.Manifest.cache
 F:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\obj\Debug\netcoreapp3.1\staticwebassets\ClassSchedule.StaticWebAssets.xml
 F:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\obj\Debug\netcoreapp3.1\ClassSchedule.AssemblyInfoInputs.cache
@@ -61,3 +60,4 @@ F:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\bin\Debug\netcor
 F:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\obj\Debug\netcoreapp3.1\ClassSchedule.MvcApplicationPartsAssemblyInfo.cache
 F:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\obj\Debug\netcoreapp3.1\ClassSchedule.dll
 F:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\obj\Debug\netcoreapp3.1\ClassSchedule.pdb
+F:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\obj\Debug\netcoreapp3.1\ClassSchedule.csprojAssemblyReference.cache

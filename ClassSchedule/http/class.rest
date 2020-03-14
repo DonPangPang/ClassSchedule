@@ -10,7 +10,7 @@ OPTIONS {{host}}/api/classes HTTP/1.1
 GET {{host}}/api/classes HTTP/1.1
 
 ###
-@classId_GET = 8dec0933-6842-497b-a04e-c20ea7a86707
+@classId_GET = 1b7b249e-658e-4ce5-a012-6277060e1a97
 GET {{host}}/api/classes/{{classId_GET}} HTTP/1.1
 
 ###
@@ -23,7 +23,7 @@ Content-Type: {{contentType}}
 }
 
 ###
-@classId_PUT = 0000-0000-0000-0000
+@classId_PUT = f08302a6-fd70-43a8-9000-ddae1daf1337
 PUT {{host}}/api/classes/{{classId_PUT}}
 Content-Type: {{contentType}}
 
@@ -33,7 +33,7 @@ Content-Type: {{contentType}}
 }
 
 ###
-@classId_PATCH = 0000-0000-0000-0000
+@classId_PATCH = 3c2cef2a-0c6e-4990-a53c-7e614aae8f60
 PATCH {{host}}/api/classes/{{classId_PATCH}}
 Content-Type: {{contentType}}
 
@@ -46,5 +46,5 @@ Content-Type: {{contentType}}
 ]
 
 ###
-@classId_DELETE = 0000-0000-0000-0000
+@classId_DELETE = 3c2cef2a-0c6e-4990-a53c-7e614aae8f60
 DELETE {{host}}/api/classes/{{classId_DELETE}}

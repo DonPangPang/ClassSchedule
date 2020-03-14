@@ -111,7 +111,7 @@ namespace ClassSchedule.Controllers
             return NoContent();
         }
 
-        [HttpPatch]
+        [HttpPatch("{ClassId}")]
         public async Task<IActionResult> RartiallyUpdateClass(
             Guid classId,
             JsonPatchDocument<ClassUpdateDto> patchDocument
