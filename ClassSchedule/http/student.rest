@@ -2,8 +2,8 @@
 @port = 5000
 @contentType = application/json
 # (Guid) classId
-@classId = 8dec0933-6842-497b-a04e-c20ea7a86707
-@route = api/classes/{classId}
+@classId = 1bda4fd2-b11e-4934-8f40-3118a630b854
+@route = api/classes/{{classId}}
 @host = {{hostname}}:{{port}}/{{route}}
 
 ###
@@ -11,3 +11,41 @@ OPTIONS {{host}}/students
 
 ###
 GET {{host}}/students HTTP/1.1
+
+###
+@studentId_GET = 0000
+GET {{host}}/students/{{studentId_GET}} HTTP/1.1
+
+###
+POST {{host}}/students HTTP/1.1
+Content-Type: {{contentType}}
+
+{
+    "studentName": "Student Test"
+}
+
+###
+@studentId_PUT = 0000
+PUT {{host}}/students/{{studentId_PUT}} HTTP/1.1
+Content-Type: {{contentType}}
+
+{
+    "studentName": "Student Change"
+}
+
+###
+@studentId_PATCH = 0000
+PATCH {{host}}/students/{{studentId_PATCH}} HTTP/1.1
+Content-Type: {{contentType}}
+
+[
+    {
+        "op": "replace",
+        "path": "/studentName",
+        "value": "Replace StudentName"
+    }
+]
+
+###
+@studentId_DELETE = 0000
+DELETE {{host}}/students/{{studentId_DELETE}} HTTP/1.1

@@ -2,6 +2,14 @@
 
 ## Update Description
 
+### 2020-03-15
+* Test ClassController
+* Waiting to be solved
+  * All Add Services
+  * Test CourseController
+* Add Test Date
+  * Update DB
+
 ### 2020-03-14
 * Fix ClassController
   * Name -> ClassName(Not is Auto Mapper)
@@ -16,9 +24,9 @@
 ### 2020-03-11
 * Fix some questions
 * Waiting to be solved
-  * StudentController
+  * StudentController   √
     * GET, POST, PUT, PATCH
-  * ClassController
+  * ClassController √
     * Name -> ClassName (Auto Mapper)
   * Test CourseController
 

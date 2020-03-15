@@ -33,7 +33,7 @@ namespace ClassSchedule.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<StudentDto>>> GetStudents(
             Guid classId,
-            [FromBody]StudentDtoParameters parameters
+            [FromQuery]StudentDtoParameters parameters
         )
         {
             if(!await _classRepository.ClassExitAsync(classId))

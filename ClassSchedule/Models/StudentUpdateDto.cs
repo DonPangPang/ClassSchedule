@@ -7,8 +7,6 @@ namespace ClassSchedule.Models
 {
     public class StudentUpdateDto
     {
-        public Guid StudentId { get; set; }
-
         public string StudentName { get; set; }
     }
 }

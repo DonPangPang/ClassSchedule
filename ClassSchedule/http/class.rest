@@ -24,7 +24,7 @@ Content-Type: {{contentType}}
 
 ###
 @classId_PUT = f08302a6-fd70-43a8-9000-ddae1daf1337
-PUT {{host}}/api/classes/{{classId_PUT}}
+PUT {{host}}/api/classes/{{classId_PUT}} HTTP/1.1
 Content-Type: {{contentType}}
 
 {
@@ -34,7 +34,7 @@ Content-Type: {{contentType}}
 
 ###
 @classId_PATCH = 3c2cef2a-0c6e-4990-a53c-7e614aae8f60
-PATCH {{host}}/api/classes/{{classId_PATCH}}
+PATCH {{host}}/api/classes/{{classId_PATCH}} HTTP/1.1
 Content-Type: {{contentType}}
 
 [
@@ -47,4 +47,4 @@ Content-Type: {{contentType}}
 
 ###
 @classId_DELETE = 3c2cef2a-0c6e-4990-a53c-7e614aae8f60
-DELETE {{host}}/api/classes/{{classId_DELETE}}
+DELETE {{host}}/api/classes/{{classId_DELETE}} HTTP/1.1
