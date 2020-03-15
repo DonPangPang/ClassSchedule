@@ -98,6 +98,7 @@ namespace ClassSchedule.Controllers
             }
 
             var entity = _mapper.Map<Course>(course);
+            entity.CourseId = Guid.NewGuid();
 
             _courseRepository.AddCourse(studentId, entity);
             await _courseRepository.SaveAsync();

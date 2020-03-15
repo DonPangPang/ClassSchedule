@@ -77,6 +77,7 @@ namespace ClassSchedule.Controllers
             }
 
             var entity = _mapper.Map<Student>(student);
+            entity.StudentId = Guid.NewGuid();
 
             _studentRepository.AddStudent(classId, entity);
             await _studentRepository.SaveAsync();

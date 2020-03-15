@@ -5,7 +5,7 @@
 ### 2020-03-15
 * Test ClassController
 * Waiting to be solved
-  * All Add Services
+  * All Add Services  √
   * Test CourseController
 * Add Test Date
   * Update DB
