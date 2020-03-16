@@ -2,9 +2,9 @@
 @port = 5000
 @contentType = application/json
 # (Guid) classId
-@classId = 0000-0000-0000-0000
-@studentId = 0000-0000-0000-0000
-@route = api/classes/{classId}/students/{{studentId}}
+@classId = 1b7b249e-658e-4ce5-a012-6277060e1a97
+@studentId = b4aab9f4-c743-4fc5-a09e-aa172fc318be
+@route = api/classes/{{classId}}/students/{{studentId}}
 @host = {{hostname}}:{{port}}/{{route}}
 
 ###
@@ -14,7 +14,7 @@ OPTIONS {{host}}/courses HTTP/1.1
 GET {{host}}/courses HTTP/1.1
 
 ###
-@courseId_GET = 0000
+@courseId_GET = 0b1e1cb4-6ce1-498f-a944-32afd9217f5b
 GET {{host}}/courses/{{courseId_GET}} HTTP/1.1
 
 ###
@@ -22,5 +22,43 @@ POST {{host}}/courses HTTP/1.1
 Content-Type: {{contentType}}
 
 {
-    
+    "courseName": "Test Course",
+    "weekDay": 2,
+    "lesson": 3,
+    "beginWeek": 1,
+    "endWeek": 18,
+    "teacherName": "Teacher Test",
+    "singleOrDouble": 1
 }
+
+###
+@courseId_PUT = f38fde48-aebe-416b-a3e6-06c3b9a4c648
+PUT {{host}}/courses/{{courseId_PUT}} HTTP/1.1
+Content-Type: {{contentType}}
+
+{
+    "courseName": "PUT Course",
+    "weekDay": 2,
+    "lesson": 3,
+    "beginWeek": 1,
+    "endWeek": 18,
+    "teacherName": "Teacher Test",
+    "singleOrDouble": 1
+}
+
+###
+@courseId_PATCH = 17da3b3e-caa4-43de-b6e7-95ef73975fbc
+PATCH {{host}}/courses/{{courseId_PATCH}} HTTP/1.1
+Content-Type: {{contentType}}
+
+[
+    {
+        "op": "replace",
+        "path": "/courseName",
+        "value": "Replace CourseName"
+    }
+]
+
+###
+@courseId_DELETE = 17da3b3e-caa4-43de-b6e7-95ef73975fbc
+DELETE {{host}}/courses/{{courseId_DELETE}} HTTP/1.1

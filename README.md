@@ -2,13 +2,18 @@
 
 ## Update Description
 
+### 2020-03-16
+* Fix some questions
+* Test Apis Finished
+
 ### 2020-03-15
 * Test ClassController
 * Waiting to be solved
   * All Add Services  √
-  * Test CourseController
+  * Test CourseController √
 * Add Test Date
   * Update DB
+
 
 ### 2020-03-14
 * Fix ClassController

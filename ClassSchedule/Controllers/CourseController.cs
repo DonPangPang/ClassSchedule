@@ -18,7 +18,7 @@ using Microsoft.Extensions.Options;
 namespace ClassSchedule.Controllers
 {
     [ApiController]
-    [Route("api/classed/{classId}/students/{studentId}")]
+    [Route("api/classes/{classId}/students/{studentId}/courses")]
     public class CourseController: ControllerBase
     {
         private readonly IClassRepository _classRepository;
@@ -42,7 +42,7 @@ namespace ClassSchedule.Controllers
         public async Task<ActionResult<IEnumerable<CourseDto>>> GetCourses(
             Guid classId,
             Guid studentId,
-            [FromBody]CourseDtoParameters parameters
+            [FromQuery]CourseDtoParameters parameters
         )
         {
             if(!await _classRepository.ClassExitAsync(classId))
@@ -62,7 +62,7 @@ namespace ClassSchedule.Controllers
             return Ok(courseDtos);
         }
 
-        [HttpGet("courseId", Name = nameof(GetCourse))]
+        [HttpGet("{courseId}", Name = nameof(GetCourse))]
         public async Task<ActionResult<CourseDto>> GetCourse(
             Guid studentId,
             Guid courseId
@@ -81,13 +81,14 @@ namespace ClassSchedule.Controllers
 
             var course = await _courseRepository.GetCourseAsync(studentId, courseId);
 
-            var courseDtos = _mapper.Map<IEnumerable<CourseDto>>(course);
+            var courseDtos = _mapper.Map<CourseDto>(course);
 
             return Ok(course);
         }
 
         [HttpPost]
         public async Task<ActionResult<CourseDto>> CreateCourse(
+            Guid classId,
             Guid studentId,
             [FromBody]CourseAddDto course
         )
@@ -99,6 +100,7 @@ namespace ClassSchedule.Controllers
 
             var entity = _mapper.Map<Course>(course);
             entity.CourseId = Guid.NewGuid();
+            entity.StudentId = studentId;
 
             _courseRepository.AddCourse(studentId, entity);
             await _courseRepository.SaveAsync();
@@ -108,17 +110,19 @@ namespace ClassSchedule.Controllers
             return CreatedAtRoute(
                 nameof(GetCourse),
                 new{
+                    classId = classId,
                     studentId = studentId,
                     courseId = dtoToReturn.CourseId
                 }, dtoToReturn
             );
         }
         
-        [HttpPut("courseId")]
+        [HttpPut("{courseId}")]
         public async Task<ActionResult<CourseDto>> UpdateCourse(
+            Guid classId,
             Guid studentId,
             Guid courseId,
-            CourseUpdateDto course
+            [FromBody]CourseUpdateDto course
         )
         {
             if(!await _studentRepository.StudentExitAsync(studentId))
@@ -142,7 +146,7 @@ namespace ClassSchedule.Controllers
                 return CreatedAtRoute(
                     nameof(GetCourse),
                     new{
-                        studentId = studentId,
+                        classId = classId,
                         courseId = dtoToReturn.CourseId
                     }, dtoToReturn
                 );
@@ -157,19 +161,20 @@ namespace ClassSchedule.Controllers
             return NoContent();
         }
 
-        [HttpPatch("courseId")]
+        [HttpPatch("{courseId}")]
         public async Task<IActionResult> PartiallyUpdateCourse(
+            Guid classId,
             Guid studentId,
             Guid courseId,
             JsonPatchDocument<CourseUpdateDto> patchDocument
         )
         {
-            if(!await _classRepository.ClassExitAsync(studentId))
+            if(!await _studentRepository.StudentExitAsync(studentId))
             {
                 return NotFound();
             }
 
-            var courseEntity = await _courseRepository.GetCourseAsync(courseId, courseId);
+            var courseEntity = await _courseRepository.GetCourseAsync(studentId, courseId);
 
             if(courseEntity == null)
             {
@@ -183,6 +188,7 @@ namespace ClassSchedule.Controllers
 
                 var courseToAdd = _mapper.Map<Course>(courseDto);
                 courseToAdd.CourseId = courseId;
+                courseToAdd.StudentId = studentId;
 
                 _courseRepository.AddCourse(courseId, courseToAdd);
                 await _courseRepository.SaveAsync();
@@ -192,6 +198,7 @@ namespace ClassSchedule.Controllers
                 return CreatedAtRoute(
                     nameof(GetCourse),
                     new{
+                        classId = classId,
                         studentId = studentId,
                         courseId = dtoToReturn.CourseId
                     }, dtoToReturn

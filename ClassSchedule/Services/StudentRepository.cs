@@ -58,8 +58,7 @@ namespace ClassSchedule.Services
             }
 
             return await _context.Students
-                .Where(x => x.ClassId == classId && x.StudentId == studentId)
-                .FirstOrDefaultAsync();
+                .FirstOrDefaultAsync(x => x.ClassId == classId && x.StudentId == studentId);
         }
 
         public void AddStudent(Guid classId, Student student)

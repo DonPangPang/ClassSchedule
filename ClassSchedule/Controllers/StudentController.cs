@@ -63,7 +63,7 @@ namespace ClassSchedule.Controllers
 
             var student = await _studentRepository.GetStudentAsync(classId, studentId);
 
-            var studentDto = _mapper.Map<IEnumerable<StudentDto>>(student);
+            var studentDto = _mapper.Map<StudentDto>(student);
 
             return Ok(studentDto);
         }
@@ -93,11 +93,11 @@ namespace ClassSchedule.Controllers
             );
         }
 
-        [HttpPut("studentId")]
+        [HttpPut("{studentId}")]
         public async Task<ActionResult<StudentDto>> UpdateStudent(
             Guid classId,
             Guid studentId,
-            StudentUpdateDto student
+            [FromBody]StudentUpdateDto student
         )
         {
             if(!await _classRepository.ClassExitAsync(classId))
@@ -136,7 +136,7 @@ namespace ClassSchedule.Controllers
             return NoContent();
         }
 
-        [HttpPatch("studentId")]
+        [HttpPatch("{studentId}")]
         public async Task<IActionResult> PartiallyUpdateStudent(
             Guid classId, 
             Guid studentId,

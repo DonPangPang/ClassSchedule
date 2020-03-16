@@ -2,7 +2,7 @@
 @port = 5000
 @contentType = application/json
 # (Guid) classId
-@classId = 1bda4fd2-b11e-4934-8f40-3118a630b854
+@classId = 1b7b249e-658e-4ce5-a012-6277060e1a97
 @route = api/classes/{{classId}}
 @host = {{hostname}}:{{port}}/{{route}}
 
@@ -13,7 +13,7 @@ OPTIONS {{host}}/students
 GET {{host}}/students HTTP/1.1
 
 ###
-@studentId_GET = 0000
+@studentId_GET = b4aab9f4-c743-4fc5-a09e-aa172fc318be
 GET {{host}}/students/{{studentId_GET}} HTTP/1.1
 
 ###
@@ -25,7 +25,7 @@ Content-Type: {{contentType}}
 }
 
 ###
-@studentId_PUT = 0000
+@studentId_PUT = 4ebd43c7-d030-43eb-9acd-19302d092ed5
 PUT {{host}}/students/{{studentId_PUT}} HTTP/1.1
 Content-Type: {{contentType}}
 
@@ -34,7 +34,7 @@ Content-Type: {{contentType}}
 }
 
 ###
-@studentId_PATCH = 0000
+@studentId_PATCH = fcfedb62-5d68-4e18-a0d9-0be14fb778e9
 PATCH {{host}}/students/{{studentId_PATCH}} HTTP/1.1
 Content-Type: {{contentType}}
 
@@ -47,5 +47,5 @@ Content-Type: {{contentType}}
 ]
 
 ###
-@studentId_DELETE = 0000
+@studentId_DELETE = 934ed24e-160a-49d7-8188-6b70242b6e9a
 DELETE {{host}}/students/{{studentId_DELETE}} HTTP/1.1
