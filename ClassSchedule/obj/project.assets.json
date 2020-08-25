@@ -2044,11 +2044,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\LE-ZZGS\\202002\\workspace\\project\\ClassSchedule\\ClassSchedule\\ClassSchedule.csproj",
+      "projectUniqueName": "f:\\LE-ZZGS\\202002\\workspace\\project\\ClassSchedule\\ClassSchedule\\ClassSchedule.csproj",
       "projectName": "ClassSchedule",
-      "projectPath": "F:\\LE-ZZGS\\202002\\workspace\\project\\ClassSchedule\\ClassSchedule\\ClassSchedule.csproj",
+      "projectPath": "f:\\LE-ZZGS\\202002\\workspace\\project\\ClassSchedule\\ClassSchedule\\ClassSchedule.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "F:\\LE-ZZGS\\202002\\workspace\\project\\ClassSchedule\\ClassSchedule\\obj\\",
+      "outputPath": "f:\\LE-ZZGS\\202002\\workspace\\project\\ClassSchedule\\ClassSchedule\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -2117,7 +2117,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

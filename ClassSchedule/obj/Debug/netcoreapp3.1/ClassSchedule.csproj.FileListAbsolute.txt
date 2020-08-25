@@ -61,3 +61,5 @@ F:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\obj\Debug\netcor
 F:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\obj\Debug\netcoreapp3.1\ClassSchedule.dll
 F:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\obj\Debug\netcoreapp3.1\ClassSchedule.pdb
 F:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\obj\Debug\netcoreapp3.1\ClassSchedule.csprojAssemblyReference.cache
+F:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\obj\Debug\netcoreapp3.1\ClassSchedule.csproj.CoreCompileInputs.cache
+F:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\obj\Debug\netcoreapp3.1\ClassSchedule.genruntimeconfig.cache

@@ -1,0 +1,142 @@
+Date : 2020-07-18 11:43:57
+Directory : f:\LE-ZZGS\202002\workspace\project\ClassSchedule
+Total : 84 files,  30232 codes, 63 comments, 606 blanks, all 30901 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| JSON     |         17 |     27,233 |          0 |          6 |     27,239 |
+| C#       |         54 |      2,714 |         33 |        538 |      3,285 |
+| HTTP     |          4 |        142 |         30 |         40 |        212 |
+| MSBuild  |          6 |         72 |          0 |          9 |         81 |
+| Markdown |          1 |         60 |          0 |         12 |         72 |
+| HTML     |          1 |         10 |          0 |          1 |         11 |
+| XML      |          1 |          1 |          0 |          0 |          1 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++-------------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                                                      | files      | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                                         |         84 |     30,232 |         63 |        606 |     30,901 |
+| ClassSchedule                                                                                                                             |         73 |     29,939 |         54 |        584 |     30,577 |
+| ClassSchedule\Controllers                                                                                                                 |          4 |        708 |          2 |        189 |        899 |
+| ClassSchedule\Data                                                                                                                        |          2 |        176 |          1 |         13 |        190 |
+| ClassSchedule\DtoParameters                                                                                                               |          5 |         60 |          0 |         12 |         72 |
+| ClassSchedule\Entities                                                                                                                    |          7 |        115 |          0 |         18 |        133 |
+| ClassSchedule\Helpers                                                                                                                     |          2 |         32 |          6 |          4 |         42 |
+| ClassSchedule\Migrations                                                                                                                  |          5 |        781 |          3 |        141 |        925 |
+| ClassSchedule\Models                                                                                                                      |         12 |        159 |          0 |         21 |        180 |
+| ClassSchedule\Profiles                                                                                                                    |          4 |         85 |          0 |         16 |        101 |
+| ClassSchedule\Properties                                                                                                                  |          1 |         14 |          0 |          1 |         15 |
+| ClassSchedule\Services                                                                                                                    |          8 |        426 |          0 |         92 |        518 |
+| ClassSchedule\bin                                                                                                                         |          6 |      4,285 |          0 |          3 |      4,288 |
+| ClassSchedule\bin\Debug                                                                                                                   |          6 |      4,285 |          0 |          3 |      4,288 |
+| ClassSchedule\bin\Debug\netcoreapp3.1                                                                                                     |          6 |      4,285 |          0 |          3 |      4,288 |
+| ClassSchedule\bin\Debug\netcoreapp3.1\Properties                                                                                          |          1 |         14 |          0 |          1 |         15 |
+| ClassSchedule\http                                                                                                                        |          4 |        142 |         30 |         40 |        212 |
+| ClassSchedule\obj                                                                                                                         |          7 |     22,773 |         10 |          5 |     22,788 |
+| ClassSchedule\obj\Debug                                                                                                                   |          3 |     20,534 |         10 |          5 |     20,549 |
+| ClassSchedule\obj\Debug\netcoreapp3.1                                                                                                     |          3 |     20,534 |         10 |          5 |     20,549 |
+| ClassSchedule\obj\Debug\netcoreapp3.1\staticwebassets                                                                                     |          1 |          1 |          0 |          0 |          1 |
+| ClassSchedule\wwwroot                                                                                                                     |          1 |         10 |          0 |          1 |         11 |
+| GuidCreater                                                                                                                               |         10 |        233 |          9 |         10 |        252 |
+| GuidCreater\bin                                                                                                                           |          3 |         42 |          0 |          0 |         42 |
+| GuidCreater\bin\Debug                                                                                                                     |          3 |         42 |          0 |          0 |         42 |
+| GuidCreater\bin\Debug\netcoreapp3.1                                                                                                       |          3 |         42 |          0 |          0 |         42 |
+| GuidCreater\obj                                                                                                                           |          5 |        167 |          9 |          5 |        181 |
+| GuidCreater\obj\Debug                                                                                                                     |          1 |          9 |          9 |          5 |         23 |
+| GuidCreater\obj\Debug\netcoreapp3.1                                                                                                       |          1 |          9 |          9 |          5 |         23 |
++-------------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-------------------------------------------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                                                                                                  | language | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\ClassSchedule.csproj                                                      | MSBuild  |         18 |          0 |          6 |         24 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\Controllers\ClassController.cs                                            | C#       |        162 |          0 |         42 |        204 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\Controllers\CourseController.cs                                           | C#       |        208 |          0 |         52 |        260 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\Controllers\StudentController.cs                                          | C#       |        182 |          0 |         51 |        233 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\Controllers\UserController.cs                                             | C#       |        156 |          2 |         44 |        202 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\Data\ClassScheduleDbContext.cs                                            | C#       |        165 |          1 |         11 |        177 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\Data\RootData.cs                                                          | C#       |         11 |          0 |          2 |         13 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\DtoParameters\ClassDtoParameters.cs                                       | C#       |         10 |          0 |          3 |         13 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\DtoParameters\CourseDtoParameters.cs                                      | C#       |         10 |          0 |          2 |         12 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\DtoParameters\DtoPatameters.cs                                            | C#       |         20 |          0 |          3 |         23 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\DtoParameters\StudentDtoParameters.cs                                     | C#       |         10 |          0 |          2 |         12 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\DtoParameters\UserDtoParameters.cs                                        | C#       |         10 |          0 |          2 |         12 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\Entities\Class.cs                                                         | C#       |         14 |          0 |          1 |         15 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\Entities\Course.cs                                                        | C#       |         20 |          0 |          4 |         24 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\Entities\Lesson.cs                                                        | C#       |         21 |          0 |          2 |         23 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\Entities\SingleOrDouble.cs                                                | C#       |         13 |          0 |          2 |         15 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\Entities\Student.cs                                                       | C#       |         15 |          0 |          4 |         19 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\Entities\User.cs                                                          | C#       |         15 |          0 |          3 |         18 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\Entities\WeekDay.cs                                                       | C#       |         17 |          0 |          2 |         19 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\Helpers\PagedList.cs                                                      | C#       |         24 |          6 |          4 |         34 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\Helpers\ResourceUriType.cs                                                | C#       |          8 |          0 |          0 |          8 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\Migrations\20200314060340_InitialMigration.Designer.cs                    | C#       |        152 |          1 |         35 |        188 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\Migrations\20200314060340_InitialMigration.cs                             | C#       |        121 |          0 |         17 |        138 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\Migrations\20200315053831_InitialMigration20200315.Designer.cs            | C#       |        220 |          1 |         37 |        258 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\Migrations\20200315053831_InitialMigration20200315.cs                     | C#       |         70 |          0 |         15 |         85 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\Migrations\ClassScheduleDbContextModelSnapshot.cs                         | C#       |        218 |          1 |         37 |        256 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\Models\ClassAddDto.cs                                                     | C#       |          8 |          0 |          1 |          9 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\Models\ClassDto.cs                                                        | C#       |         13 |          0 |          3 |         16 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\Models\ClassUpdateDto.cs                                                  | C#       |          9 |          0 |          1 |         10 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\Models\CourseAddDto.cs                                                    | C#       |         17 |          0 |          1 |         18 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\Models\CourseDto.cs                                                       | C#       |         20 |          0 |          2 |         22 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\Models\CourseUpdateDto.cs                                                 | C#       |         17 |          0 |          1 |         18 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\Models\StudentAddDto.cs                                                   | C#       |         11 |          0 |          1 |         12 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\Models\StudentDto.cs                                                      | C#       |         13 |          0 |          2 |         15 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\Models\StudentUpdateDto.cs                                                | C#       |         11 |          0 |          1 |         12 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\Models\UserAddDto.cs                                                      | C#       |         13 |          0 |          3 |         16 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\Models\UserDto.cs                                                         | C#       |         14 |          0 |          3 |         17 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\Models\UserUpdateDto.cs                                                   | C#       |         13 |          0 |          2 |         15 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\Profiles\ClassProfile.cs                                                  | C#       |         20 |          0 |          4 |         24 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\Profiles\CourseProfile.cs                                                 | C#       |         20 |          0 |          4 |         24 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\Profiles\StudentProfile.cs                                                | C#       |         20 |          0 |          4 |         24 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\Profiles\UserProfile.cs                                                   | C#       |         25 |          0 |          4 |         29 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\Program.cs                                                                | C#       |         42 |          0 |          6 |         48 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\Properties\launchSettings.json                                            | JSON     |         14 |          0 |          1 |         15 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\Services\ClassRepository.cs                                               | C#       |         89 |          0 |         21 |        110 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\Services\CourseRepository.cs                                              | C#       |         87 |          0 |         20 |        107 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\Services\IClassRepository.cs                                              | C#       |         19 |          0 |          3 |         22 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\Services\ICourseRepository.cs                                             | C#       |         19 |          0 |          3 |         22 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\Services\IStudentRepository.cs                                            | C#       |         19 |          0 |          3 |         22 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\Services\IUserRepository.cs                                               | C#       |         20 |          0 |          4 |         24 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\Services\StudentRepository.cs                                             | C#       |         87 |          0 |         19 |        106 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\Services\UserRepository.cs                                                | C#       |         86 |          0 |         19 |        105 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\Startup.cs                                                                | C#       |         94 |          2 |         14 |        110 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\appsettings.Development.json                                              | JSON     |          9 |          0 |          1 |         10 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\appsettings.json                                                          | JSON     |         10 |          0 |          1 |         11 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\bin\Debug\netcoreapp3.1\ClassSchedule.deps.json                           | JSON     |      4,230 |          0 |          0 |      4,230 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\bin\Debug\netcoreapp3.1\ClassSchedule.runtimeconfig.dev.json              | JSON     |         10 |          0 |          0 |         10 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\bin\Debug\netcoreapp3.1\ClassSchedule.runtimeconfig.json                  | JSON     |         12 |          0 |          0 |         12 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\bin\Debug\netcoreapp3.1\Properties\launchSettings.json                    | JSON     |         14 |          0 |          1 |         15 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\bin\Debug\netcoreapp3.1\appsettings.Development.json                      | JSON     |          9 |          0 |          1 |         10 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\bin\Debug\netcoreapp3.1\appsettings.json                                  | JSON     |         10 |          0 |          1 |         11 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\http\class.rest                                                           | HTTP     |         33 |          7 |         10 |         50 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\http\course.rest                                                          | HTTP     |         46 |          8 |         10 |         64 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\http\student.rest                                                         | HTTP     |         33 |          8 |         10 |         51 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\http\user.rest                                                            | HTTP     |         30 |          7 |         10 |         47 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\obj\ClassSchedule.csproj.nuget.dgspec.json                                | JSON     |         88 |          0 |          0 |         88 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\obj\ClassSchedule.csproj.nuget.g.props                                    | MSBuild  |         21 |          0 |          0 |         21 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\obj\ClassSchedule.csproj.nuget.g.targets                                  | MSBuild  |          6 |          0 |          0 |          6 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\obj\Debug\netcoreapp3.1\ClassSchedule.AssemblyInfo.cs                     | C#       |          9 |         10 |          5 |         24 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\obj\Debug\netcoreapp3.1\project.razor.json                                | JSON     |     20,524 |          0 |          0 |     20,524 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\obj\Debug\netcoreapp3.1\staticwebassets\ClassSchedule.StaticWebAssets.xml | XML      |          1 |          0 |          0 |          1 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\obj\project.assets.json                                                   | JSON     |      2,124 |          0 |          0 |      2,124 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\ClassSchedule\wwwroot\index.html                                                        | HTML     |         10 |          0 |          1 |         11 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\GuidCreater\GuidCreater.csproj                                                          | MSBuild  |          6 |          0 |          3 |          9 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\GuidCreater\Program.cs                                                                  | C#       |         18 |          0 |          2 |         20 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\GuidCreater\bin\Debug\netcoreapp3.1\GuidCreater.deps.json                               | JSON     |         23 |          0 |          0 |         23 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\GuidCreater\bin\Debug\netcoreapp3.1\GuidCreater.runtimeconfig.dev.json                  | JSON     |         10 |          0 |          0 |         10 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\GuidCreater\bin\Debug\netcoreapp3.1\GuidCreater.runtimeconfig.json                      | JSON     |          9 |          0 |          0 |          9 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\GuidCreater\obj\Debug\netcoreapp3.1\GuidCreater.AssemblyInfo.cs                         | C#       |          9 |          9 |          5 |         23 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\GuidCreater\obj\GuidCreater.csproj.nuget.dgspec.json                                    | JSON     |         65 |          0 |          0 |         65 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\GuidCreater\obj\GuidCreater.csproj.nuget.g.props                                        | MSBuild  |         15 |          0 |          0 |         15 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\GuidCreater\obj\GuidCreater.csproj.nuget.g.targets                                      | MSBuild  |          6 |          0 |          0 |          6 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\GuidCreater\obj\project.assets.json                                                     | JSON     |         72 |          0 |          0 |         72 |
+| f:\LE-ZZGS\202002\workspace\project\ClassSchedule\README.md                                                                               | Markdown |         60 |          0 |         12 |         72 |
+| Total                                                                                                                                     |          |     30,232 |         63 |        606 |     30,901 |
++-------------------------------------------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
